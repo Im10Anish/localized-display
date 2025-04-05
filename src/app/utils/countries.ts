@@ -13,6 +13,7 @@ export interface Country {
 
 const TIMEZONE_TO_COUNTRY: Record<string, string> = {
   "America/New_York": "US",
+  "Asia/Calcutta": "IN",
 };
 
 export function getCountryByTimezone(
@@ -69,6 +70,14 @@ export function getCountries(): Country[] {
       locale: "fr-FR",
       timezone: "Europe/Paris",
       colors: ["#3b5998", "#ffffff"],
+    },
+    {
+      code: "IN",
+      name: "India",
+      currency: { code: "INR", name: "Indian Rupee", symbol: "₹" },
+      locale: "en-IN",
+      timezone: "Asia/Calcutta",
+      colors: ["#FF9933", "#FFFFFF", "#138808"],
     },
     // Add more countries as needed
   ];
