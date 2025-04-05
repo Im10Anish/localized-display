@@ -1,3 +1,5 @@
+import { TIMEZONE_TO_COUNTRY } from "../data/timezone";
+import { COUNTRIES } from "../data/countries";
 export interface Country {
   code: string;
   name: string;
@@ -10,11 +12,6 @@ export interface Country {
   timezone: string;
   colors: string[];
 }
-
-const TIMEZONE_TO_COUNTRY: Record<string, string> = {
-  "America/New_York": "US",
-  "Asia/Calcutta": "IN",
-};
 
 export function getCountryByTimezone(
   timezone: string,
@@ -46,39 +43,5 @@ export function getCountryByTimezone(
 }
 
 export function getCountries(): Country[] {
-  return [
-    {
-      code: "US",
-      name: "United States",
-      currency: {
-        code: "USD",
-        name: "United States Dollar",
-        symbol: "$",
-      },
-      locale: "en-US",
-      timezone: "America/New_York",
-      colors: ["#3b5998", "#ffffff"],
-    },
-    {
-      code: "FR",
-      name: "France",
-      currency: {
-        code: "EUR",
-        name: "Euro",
-        symbol: "€",
-      },
-      locale: "fr-FR",
-      timezone: "Europe/Paris",
-      colors: ["#3b5998", "#ffffff"],
-    },
-    {
-      code: "IN",
-      name: "India",
-      currency: { code: "INR", name: "Indian Rupee", symbol: "₹" },
-      locale: "en-IN",
-      timezone: "Asia/Calcutta",
-      colors: ["#FF9933", "#FFFFFF", "#138808"],
-    },
-    // Add more countries as needed
-  ];
+  return COUNTRIES;
 }
